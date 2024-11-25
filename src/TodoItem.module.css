@@ -1,0 +1,114 @@
+.todoItem {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    gap: 0.875rem;
+    padding: 0.9375rem;
+
+    background-color: var(--gray-500);
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+    
+}
+
+.todoItem + .todoItem {
+    margin-top: 0.875rem;
+}
+
+.todoItem p {
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--gray-100);
+    text-align: left;
+    flex-grow: 1;
+}
+.todoItem p.checked {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.todoItem button.checked {
+    background: transparent;
+    border: 0;
+    color: var(--gray-100);
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 4px;
+    padding: 0.21875rem
+}
+
+.todoItem button.notChecked {
+    background: transparent;
+    border: 0;
+    color: var(--blue);
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 4px;
+    padding: 0.21875rem
+}
+
+.todoItem button.delete {
+    background: transparent;
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 4px;
+    padding: 0.3125rem
+}
+
+.todoItem button.delete:hover {
+    color: var(--danger);
+    background-color: var(--gray-400);
+}
+
+.boxInput {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.boxInput input[type="checkbox"] {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.0625em;
+    height: 1.0625em;
+    border: 0.1em solid var(--blue);
+    border-radius: 999px;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+.boxInput input[type="checkbox"]:hover {
+    border-color: var(--blue-dark);
+    background-color: rgba(var(--blue-dark), 0.2);
+}
+
+
+.boxInput input[type="checkbox"]:checked {
+    border-color: var(--purple-dark);
+    background-color: var(--purple-dark);
+}
+
+.boxInput input[type="checkbox"]:checked:hover {
+    border-color: var(--purple);
+    background-color: var(--purple);
+}
+
+.boxInput input[type="checkbox"]:checked::before {
+    content: '';
+    height: 0.5rem;
+    width: 0.2rem;
+    margin-top: -1px; 
+    transform: rotate(45deg);
+    border-bottom: 1px solid var(--gray-100);
+    border-right: 1px solid var(--gray-100);
+}
